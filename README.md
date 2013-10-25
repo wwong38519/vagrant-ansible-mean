@@ -5,9 +5,9 @@ This is half a lie because you will likely want to install Express (the "E" in M
 
 Installation
 ------------
-Install [Vagrant 1.3.5](http://downloads.vagrantup.com/)
-Install [VirtualBox 4.3](https://www.virtualbox.org/wiki/Downloads)
-Install [Ansible](http://www.ansibleworks.com/docs/intro_installation.html)
+1. Install [Vagrant 1.3.5](http://downloads.vagrantup.com/)
+2. Install [VirtualBox 4.3](https://www.virtualbox.org/wiki/Downloads)
+3. Install [Ansible](http://www.ansibleworks.com/docs/intro_installation.html)
 
 Running
 -------
@@ -48,11 +48,11 @@ end
 ```
 
 Ansible installs the following packages:
-*git
-*nodejs
-*mongodb
-*yeoman
-*generator-angular for yeoman
+* git
+* nodejs
+* mongodb
+* yeoman
+* generator-angular for yeoman
 
 And the mongodb service is started after provisioning takes place.
 
