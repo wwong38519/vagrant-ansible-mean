@@ -1,4 +1,10 @@
 ---
-- name: General | Update apt cache
+- name: Common | Update apt cache
+  sudo: yes
   apt: update-cache=yes
-  tags: general
+  tags: common
+
+- name: Common | Install git
+  apt: pkg=git state=present
+  sudo: yes
+  tags: common
