@@ -1,0 +1,8 @@
+---
+- name: Yeoman | Install Yeoman
+  command: npm install -g yo
+  tags: yeoman
+
+- name: Yeoman | Install Angular.js generator
+  command: npm install -g generator-angular
+  tags: yeoman

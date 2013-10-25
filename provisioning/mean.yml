@@ -1,0 +1,10 @@
+---
+- hosts: all
+  user: vagrant
+  sudo: True
+
+  roles:
+    - common
+    - nodejs
+    - mongodb
+    - yo

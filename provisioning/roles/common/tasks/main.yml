@@ -1,0 +1,4 @@
+---
+- name: General | Update apt cache
+  apt: update-cache=yes
+  tags: general
