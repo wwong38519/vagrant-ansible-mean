@@ -1,7 +1,7 @@
 Getting MEAN with Vagrant and Ansible
 =====================================
 
-This is half a lie because you will likely want to install Express (the "E" in MEAN) on a project by project basis. Other than that - everything else is good to go.
+This is half a lie because you will likely want to install Express (the "E" in MEAN) on a project by project basis. This configuration will install the latest versions of Node.js, MongoDB, Yeoman, and the Yeoman Angular.js generator.
 
 Installation
 ------------
@@ -65,3 +65,7 @@ By default this repo disables directory syncing. If you wish to have this enviro
 ```
 
 This will sync your source folders over SSH so you can develop on your host machine.
+
+VM Configuration
+----------------
+For more on VM configuration options, check out the docs at [Vagrant](http://docs.vagrantup.com/v2/virtualbox/configuration.html)
