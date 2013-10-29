@@ -1,7 +1,7 @@
 Getting MEAN with Vagrant and Ansible
 =====================================
 
-This is half a lie because you will likely want to install Express (the "E" in MEAN) on a project by project basis. This configuration will install the latest versions of Node.js, MongoDB, Yeoman, and the Yeoman Angular.js generator.
+This configuration will install the latest versions of MongoDB, Node.js, Express, Yeoman, and the Yeoman Angular.js generator.
 
 Installation
 ------------
