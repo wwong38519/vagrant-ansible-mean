@@ -14,7 +14,7 @@ Running
 Running and provisioning can be handled nicely:
 
 ```
-vagrant up --provision
+vagrant up
 ```
 
 You can SSH into the provisioned vm like so:
@@ -53,8 +53,10 @@ Ansible installs the following packages:
 * mongodb
 * yeoman
 * generator-angular for yeoman
+* express
+* nginx
 
-And the mongodb service is started after provisioning takes place.
+The mongodb and nginx services are started after provisioning takes place.
 
 Synced Folders
 --------------
@@ -65,6 +67,10 @@ By default this repo disables directory syncing. If you wish to have this enviro
 ```
 
 This will sync your source folders over SSH so you can develop on your host machine.
+
+Ansible Variables
+-----------------
+The file `provisioning/group_vars/all` contains configurations for your install. This will allow you to configure project directories and things like nginx hostname and the port node js will run on.
 
 VM Configuration
 ----------------
