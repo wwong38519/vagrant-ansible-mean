@@ -1,7 +1,7 @@
 Getting MEAN with Vagrant and Ansible
 =====================================
 
-This configuration will install the latest versions of MongoDB, Node.js, Express, Yeoman, and the Yeoman Angular.js generator.
+This configuration will install the latest versions of MongoDB, Nginx, Node.js, Express, Yeoman, and the Yeoman Angular.js generator.
 
 Installation
 ------------
