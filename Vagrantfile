@@ -15,8 +15,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # using a specific IP.
   config.vm.network :private_network, ip: "192.168.111.222"
 
-  # If keeping vagrant and provisioning in source older create src/ and uncomment
-  config.vm.synced_folder ".", "/home/vagrant/src"
+  #syncs entire project directory to ~/application on target machine
+  config.vm.synced_folder ".", "/home/vagrant/application"
 
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--memory", "1024"]
