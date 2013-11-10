@@ -4,19 +4,7 @@
   apt: update-cache=yes
   tags: common
 
-- name: Common | Install git
-  apt: pkg=git state=present
+- name: Common | Update language
   sudo: yes
-  tags: common
-
-- name: Common | Create src directory
-  command: mkdir {{src_root}}
-  tags: common
-
-- name: Common | Create frontend directory 
-  command: chdir={{src_root}} mkdir {{web_project_name}}
-  tags: common
-
-- name: Common | Create express project directory
-  command: chdir={{src_root}} mkdir {{express_project_name}}
+  apt: pkg=language-pack-en
   tags: common

@@ -4,6 +4,7 @@
 
   roles:
     - common
+    - ruby
     - nodejs
     - mongodb
     - yo

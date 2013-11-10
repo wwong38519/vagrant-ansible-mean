@@ -8,7 +8,7 @@ server {
     #server_name app.net www.app.net app;
     #access_log /var/log/nginx/app.log;
     #error_log /var/log/nginx/app.error.log debug;
-    root {{src_root}}/{{web_project_name}};
+    root {{src_root}}/{{web_project_name}}/dist;
 
     location / {
       index	index.html;
