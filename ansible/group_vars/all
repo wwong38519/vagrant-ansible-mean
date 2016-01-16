@@ -1,0 +1,14 @@
+---
+src_root: /home/{{ansible_user_id}}/src
+nginx_hostname: hostname
+node_port: 3000
+web_project_name: web
+express_project_name: api
+express_base_route: api/
+locale: en_US.UTF-8
+mongodb_dbpath: /var/lib/mongodb
+mongodb_logpath: /var/log/mongodb/mongod.log
+
+#TODO: to solve mongodb_dbpath on Vagrant synced_folder
+#mongodb_dbpath: /vagrant/mongodb/data/db
+#mongodb_logpath: /vagrant/mongodb/mongod.log

@@ -1,0 +1,31 @@
+---
+- name: Common | Update apt cache
+  sudo: yes
+  apt: update-cache=yes
+  tags: common
+
+- name: Common | Install packages
+  sudo: yes
+  apt: pkg={{item}} state=installed
+  with_items:
+    - build-essential
+    - python
+    - python3-pip
+    - git
+  tags: common
+
+- name: Common | Update language
+  sudo: yes
+  apt: pkg=language-pack-en
+  tags: common
+
+- name: Common | Install locale {{locale}}
+  sudo: yes
+  command: /usr/sbin/locale-gen {{locale}}
+  tags: common
+
+- name: Common | Set locale
+  sudo: yes
+  command: /usr/sbin/update-locale LANG={{locale}} LC_ALL={{locale}}
+  tags: common
+

@@ -1,30 +1,25 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+VAGRANTFILE_API_VERSION ||= "2"
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
+box = "ubuntu/trusty64"
+name = "vagrant-ansible-mean"
+ipaddr = "192.168.0.30"
+playbook = "ansible/mean.yml"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  
-  config.vm.box = "saucy64"
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
+	config.vm.box_check_update = false
 
-  config.ssh.forward_agent = true
+	config.vm.define name, primary: true do |app|
+		app.vm.box = box
+		app.vm.network :private_network, ip: ipaddr
+		app.vm.provider :virtualbox do |vb|
+			vb.name = name
+		end
+		app.vm.provision :ansible_local do |ansible|
+			ansible.playbook = playbook
+		end
+#		app.vm.synced_folder ".", "/vagrant", type: "nfs"
+#		app.vm.synced_folder ".", "/vagrant", type: "rsync", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=664"]
+#		app.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=664"]
 
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  config.vm.network :private_network, ip: "192.168.111.222"
-
-  #syncs entire project directory to ~/application on target machine
-  config.vm.synced_folder ".", "/home/vagrant/application"
-
-  config.vm.provider "virtualbox" do |v|
-    v.customize ["modifyvm", :id, "--memory", "1024"]
-  end
-
-  #provisions the environment
-  config.vm.provision "ansible" do |ansible|
-    ansible.raw_arguments = "-i provisioning/hosts"
-    ansible.playbook = "provisioning/mean.yml"
-  end
+	end
 end

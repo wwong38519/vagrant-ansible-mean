@@ -1,6 +1,7 @@
 ---
 - hosts: all
-  user: vagrant
+  environment:
+    LC_ALL: C
 
   roles:
     - common
